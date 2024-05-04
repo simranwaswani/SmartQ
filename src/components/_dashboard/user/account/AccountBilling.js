@@ -5,7 +5,7 @@ import { useSnackbar } from 'notistack';
 // material
 import { Box, Grid, Card, Button, Typography, Stack } from '@mui/material';
 // redux
-import { useSelector } from '../../../../redux/store';
+// import { useSelector } from '../../../../redux/store';
 // utils
 import fakeRequest from '../../../../utils/fakeRequest';
 //
@@ -16,7 +16,7 @@ import AccountBillingInvoiceHistory from './AccountBillingInvoiceHistory';
 // ----------------------------------------------------------------------
 
 export default function AccountBilling() {
-  const { cards, invoices, addressBook } = useSelector((state) => state.user);
+  // const { cards, invoices, addressBook } = useSelector((state) => state.user);
   const [open, setOpen] = useState(false);
   const { enqueueSnackbar } = useSnackbar();
 
@@ -80,21 +80,21 @@ export default function AccountBilling() {
             </Box>
           </Card>
 
-          <AccountBillingPaymentMethod
+          {/* <AccountBillingPaymentMethod
             cards={cards}
             formik={formik}
             isOpen={open}
             onOpen={handleOpenAddCard}
             onCancel={handleCancel}
-          />
+          /> */}
 
-          <AccountBillingAddressBook addressBook={addressBook} />
+          {/* <AccountBillingAddressBook addressBook={addressBook} /> */}
         </Stack>
       </Grid>
 
-      <Grid item xs={12} md={4}>
+      {/* <Grid item xs={12} md={4}>
         <AccountBillingInvoiceHistory invoices={invoices} />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }

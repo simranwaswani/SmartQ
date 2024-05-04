@@ -18,15 +18,12 @@ export const PATH_AUTH = {
   newPassword: path(ROOTS_AUTH, '/new-password')
 };
 
-
 export const PATH_LANDING ={
   root: '/',
   home: path('/', '/home'),
   about: path('/', '/about'),
   contact: path('/', '/contact'),
-
-}
-
+};
 
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
@@ -48,5 +45,10 @@ export const PATH_DASHBOARD = {
     pageFour: path(ROOTS_DASHBOARD, '/app/four'),
     pageFive: path(ROOTS_DASHBOARD, '/app/five'),
     pageSix: path(ROOTS_DASHBOARD, '/app/six')
+  },
+  user: {
+    root: path(ROOTS_DASHBOARD, '/user-account') // Add this line
+
   }
+
 };

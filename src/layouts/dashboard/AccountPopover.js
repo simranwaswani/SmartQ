@@ -17,7 +17,7 @@ import useAuth from '../../hooks/useAuth';
 
 const MENU_OPTIONS = [
   { label: 'Home', icon: homeFill, linkTo: '/dashboard/home' },
-  { label: 'Profile', icon: personFill, linkTo: '#' },
+  { label: 'Profile', icon: personFill, linkTo: '/dashboard/vendor/account' },
   { label: 'Settings', icon: settings2Fill, linkTo: '#' }
 ];
 

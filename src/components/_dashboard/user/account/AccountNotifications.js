@@ -4,7 +4,7 @@ import { useFormik, Form, FormikProvider } from 'formik';
 import { Card, Stack, Switch, Typography, FormControlLabel } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // redux
-import { useSelector } from '../../../../redux/store';
+//import { useSelector } from '../../../../redux/store';
 // utils
 import fakeRequest from '../../../../utils/fakeRequest';
 
@@ -32,17 +32,17 @@ const APPLICATION_OPTIONS = [
 
 export default function AccountNotifications() {
   const { enqueueSnackbar } = useSnackbar();
-  const { notifications } = useSelector((state) => state.user);
+  //const { notifications } = useSelector((state) => state.user);
 
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      activityComments: notifications.activityComments,
-      activityAnswers: notifications.activityAnswers,
-      activityFollows: notifications.activityFollows,
-      applicationNews: notifications.applicationNews,
-      applicationProduct: notifications.applicationProduct,
-      applicationBlog: notifications.applicationBlog
+      // activityComments: notifications.activityComments,
+      // activityAnswers: notifications.activityAnswers,
+      // activityFollows: notifications.activityFollows,
+      // applicationNews: notifications.applicationNews,
+      // applicationProduct: notifications.applicationProduct,
+      // applicationBlog: notifications.applicationBlog
     },
     onSubmit: async (values, { setSubmitting }) => {
       await fakeRequest(500);

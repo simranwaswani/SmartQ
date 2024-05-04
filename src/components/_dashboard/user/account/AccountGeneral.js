@@ -8,7 +8,7 @@ import { LoadingButton } from '@mui/lab';
 // hooks
 import useAuth from '../../../../hooks/useAuth';
 import useIsMountedRef from '../../../../hooks/useIsMountedRef';
-import { UploadAvatar } from '../../../upload';
+// import { UploadAvatar } from '../../../upload';
 // utils
 import { fData } from '../../../../utils/formatNumber';
 //
@@ -28,17 +28,17 @@ export default function AccountGeneral() {
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      displayName: user.displayName || '',
-      email: user.email,
-      photoURL: user.photoURL,
-      phoneNumber: user.phoneNumber,
-      country: user.country,
-      address: user.address,
-      state: user.state,
-      city: user.city,
-      zipCode: user.zipCode,
-      about: user.about,
-      isPublic: user.isPublic
+      displayName: user?.displayName || '',
+      email: user?.email || '',
+      photoURL: user?.photoURL || '',
+      phoneNumber: user?.phoneNumber || '',
+      country: user?.country || '',
+      address: user?.address || '',
+      state: user?.state || '',
+      city: user?.city || '',
+      zipCode: user?.zipCode || '',
+      about: user?.about|| '',
+      isPublic: user?.isPublic || ''
     },
 
     validationSchema: UpdateUserSchema,
@@ -79,7 +79,7 @@ export default function AccountGeneral() {
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Card sx={{ py: 10, px: 3, textAlign: 'center' }}>
-              <UploadAvatar
+              {/* <UploadAvatar
                 accept="image/*"
                 file={values.photoURL}
                 maxSize={3145728}
@@ -100,7 +100,7 @@ export default function AccountGeneral() {
                     <br /> max size of {fData(3145728)}
                   </Typography>
                 }
-              />
+              /> */}
 
               <FormHelperText error sx={{ px: 2, textAlign: 'center' }}>
                 {touched.photoURL && errors.photoURL}

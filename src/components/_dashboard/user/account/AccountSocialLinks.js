@@ -9,7 +9,7 @@ import instagramFilled from '@iconify/icons-ant-design/instagram-filled';
 import { Stack, Card, TextField, InputAdornment } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 // redux
-import { useSelector } from '../../../../redux/store';
+//import { useSelector } from '../../../../redux/store';
 // utils
 import fakeRequest from '../../../../utils/fakeRequest';
 
@@ -38,15 +38,15 @@ const SOCIAL_LINKS_OPTIONS = [
 
 export default function AccountSocialLinks() {
   const { enqueueSnackbar } = useSnackbar();
-  const { myProfile } = useSelector((state) => state.user);
+  // const { myProfile } = useSelector((state) => state.user);
 
   const formik = useFormik({
     enableReinitialize: true,
     initialValues: {
-      facebookLink: myProfile.facebookLink,
-      instagramLink: myProfile.instagramLink,
-      linkedinLink: myProfile.linkedinLink,
-      twitterLink: myProfile.twitterLink
+      // facebookLink: myProfile.facebookLink,
+      // instagramLink: myProfile.instagramLink,
+      // linkedinLink: myProfile.linkedinLink,
+      // twitterLink: myProfile.twitterLink
     },
     onSubmit: async (values, { setSubmitting }) => {
       await fakeRequest(500);
