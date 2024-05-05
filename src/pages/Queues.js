@@ -4,7 +4,24 @@ import Page from '../components/Page';
 import UpcomingAppointments from '../components/general-app/UpcomingAppointments';
 import VerticalTable from '../components/general-app/VerticalTable';
 
+
 export default function PageThree() {
+  const navigate = useNavigate();
+  const { isAuthenticated, user } = useAuth();
+
+  useEffect(() => {
+    if (!isAuthenticated) {
+      navigate('/auth/login', { replace: true });
+    }
+
+    if (isAuthenticated && user?.usertype !== 'vendor') {
+      navigate('/auth/401', { replace: true });
+    }
+  }
+  , [isAuthenticated, navigate, user.usertype]);
+
+
+
   const [open, setOpen] = useState(false);
   const [queueData, setQueueData] = useState({
     startTime: '',

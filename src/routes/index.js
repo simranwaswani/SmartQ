@@ -4,18 +4,20 @@ import MainLayout from '../layouts/main';
 import DashboardLayout from '../layouts/dashboard';
 import LogoOnlyLayout from '../layouts/LogoOnlyLayout';
 import LoadingScreen from '../components/LoadingScreen';
-import Login from '../pages/authentication/Login';
-import Register from '../pages/authentication/Register';
-import ResetPassword from '../pages/authentication/ResetPassword';
-import VerifyCode from '../pages/authentication/VerifyCode';
-import NewPasswordForm from '../pages/authentication/NewPasswordForm';
-import Request from '../pages/Request';
+import Login from 'src/pages/authentication/Login';
+import Register from 'src/pages/authentication/Register';
+import ResetPassword from 'src/pages/authentication/ResetPassword';
+import VerifyCode from 'src/pages/authentication/VerifyCode';
+import NewPasswordForm from 'src/pages/authentication/NewPasswordForm';
+import Request from 'src/pages/Request';
 import PageFive from '../pages/PageFive';
 import LandingPage from '../pages/LandingPage';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Page404 from '../pages/Page404';
 import UserAccount from 'src/pages/UserAccount';
+// ----------------------------------------------------------------------
+
 const Loadable = (Component) => {
   return (props) => <Suspense fallback={<LoadingScreen />}><Component {...props} /></Suspense>;
 };
@@ -33,6 +35,8 @@ export default function Router() {
   const LoadableLandingPage = Loadable(lazy(() => import('../pages/LandingPage')));
   const LoadableRequestPage = Loadable(lazy(() => import('../pages/Request')));
 
+
+
   return useRoutes([
     {
       path: 'auth',
@@ -41,7 +45,8 @@ export default function Router() {
         { path: 'register', element: <Register /> },
         { path: 'reset-password', element: <ResetPassword /> },
         { path: 'verify', element: <VerifyCode /> },
-        { path: 'new-password', element: <NewPasswordForm /> } 
+        { path: 'new-password', element: <NewPasswordForm /> } ,
+        { path: '401', element: <LoadablePage401 />}
       ]
     },
     {
@@ -64,8 +69,8 @@ export default function Router() {
       element: <MainLayout />,
       children: [
         { element: <LandingPage /> },
-        { path: '/about', element: <About /> },
-        { path: '/contact', element: <Contact /> }
+        { path: 'about', element: <About /> },
+        { path: 'contact', element: <Contact /> }
       ]
     },
 
