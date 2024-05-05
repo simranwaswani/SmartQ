@@ -38,17 +38,17 @@ export const PATH_DASHBOARD = {
     home: path(ROOTS_DASHBOARD, '/home'),
     transactions: path(ROOTS_DASHBOARD, '/transactions'),
     queue: path(ROOTS_DASHBOARD, '/queue'),
+    pageFive: path(ROOTS_DASHBOARD, '/page-five'),
     request: path(ROOTS_DASHBOARD, '/request') 
   },
   app: {
     root: path(ROOTS_DASHBOARD, '/app'),
     pageFour: path(ROOTS_DASHBOARD, '/app/four'),
-    pageFive: path(ROOTS_DASHBOARD, '/app/five'),
+   pageFive: path(ROOTS_DASHBOARD, '/app/five'),
     pageSix: path(ROOTS_DASHBOARD, '/app/six')
   },
   user: {
-    root: path(ROOTS_DASHBOARD, '/user-account') // Add this line
+    root: path(ROOTS_DASHBOARD, '/user-account') 
 
   }
-
 };

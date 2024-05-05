@@ -1,6 +1,6 @@
+import React, { useState } from 'react';
 import { Icon } from '@iconify/react';
 import { capitalCase } from 'change-case';
-import { useState, useEffect } from 'react';
 import bellFill from '@iconify/icons-eva/bell-fill';
 import shareFill from '@iconify/icons-eva/share-fill';
 import roundVpnKey from '@iconify/icons-ic/round-vpn-key';
@@ -8,13 +8,8 @@ import roundReceipt from '@iconify/icons-ic/round-receipt';
 import roundAccountBox from '@iconify/icons-ic/round-account-box';
 // material
 import { Container, Tab, Box, Tabs, Stack } from '@mui/material';
-// redux
-//import { useDispatch } from '../../redux/store';
-//import { getCards, getProfile, getInvoices, getAddressBook, getNotifications } from '../../redux/slices/user';
 // routes
 import { PATH_DASHBOARD } from '../routes/paths';
-// hooks
-import useSettings from '../hooks/useSettings';
 // components
 import Page from '../components/Page';
 import HeaderBreadcrumbs from '../components/HeaderBreadcrumbs';
@@ -23,23 +18,17 @@ import {
   AccountBilling,
   AccountSocialLinks,
   AccountNotifications,
-  AccountChangePassword
+  AccountChangePassword,
+  AccountOperation,
+  AccountLocation, 
+  AccountBusinessProfile,
+  AccountEducation 
 } from '../components/_dashboard/user/account';
 
 // ----------------------------------------------------------------------
 
 export default function UserAccount() {
-  const { themeStretch } = useSettings();
   const [currentTab, setCurrentTab] = useState('general');
- // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   dispatch(getCards());
-  //   dispatch(getAddressBook());
-  //   dispatch(getInvoices());
-  //   dispatch(getNotifications());
-  //   dispatch(getProfile());
-  // }, [dispatch]);
 
   const ACCOUNT_TABS = [
     {
@@ -66,6 +55,26 @@ export default function UserAccount() {
       value: 'change_password',
       icon: <Icon icon={roundVpnKey} width={20} height={20} />,
       component: <AccountChangePassword />
+    },
+    {
+      value: 'operation',
+      icon: <Icon icon="ep:operation" width={20} height={20} />,
+      component: <AccountOperation />
+    },
+    {
+      value: 'location',
+      icon: <Icon icon="simple-line-icons:location-pin" width={20} height={20} />,
+      component: <AccountLocation />
+    },
+    {
+      value: 'business_profile',
+      icon: <Icon icon="iconamoon:profile-circle-fill" width={20} height={20} />,
+      component: <AccountBusinessProfile />
+    },
+    {
+      value: 'education', 
+      icon: <Icon icon="zondicons:education" width={20} height={20} />,
+      component: <AccountEducation />
     }
   ];
 
@@ -75,7 +84,7 @@ export default function UserAccount() {
 
   return (
     <Page title="User: Account Settings | Minimal-UI">
-      <Container maxWidth={themeStretch ? false : 'lg'}>
+      <Container maxWidth="lg">
         <HeaderBreadcrumbs
           heading="Account"
           links={[

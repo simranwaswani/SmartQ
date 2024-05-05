@@ -3,7 +3,6 @@ import { Container, Typography, Grid, Button, Dialog, DialogTitle, DialogContent
 import Page from '../components/Page';
 import UpcomingAppointments from '../components/general-app/UpcomingAppointments';
 import VerticalTable from '../components/general-app/VerticalTable';
-import CompleteQueue from '../components/general-app/CompleteQueue';
 
 export default function PageThree() {
   const [open, setOpen] = useState(false);
@@ -49,9 +48,6 @@ export default function PageThree() {
               <VerticalTable />
             </div>
           </Grid>
-          <Grid item xs={12}>
-            <CompleteQueue />
-          </Grid>
         </Grid>
       </Container>
       <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -89,8 +85,6 @@ export default function PageThree() {
         <DialogActions>
           <Button onClick={handleClose} color="primary" sx={{ border: '1px solid red', color: 'red' }}>Cancel</Button>
           <Button onClick={handleCreateQueue} color="primary" sx={{ border: '1px solid', borderColor: 'primary.main', '&:hover': { borderColor: 'primary.dark' } }}>Create</Button>
-
-
         </DialogActions>
       </Dialog>
     </Page>
