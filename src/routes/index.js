@@ -15,6 +15,7 @@ import LandingPage from '../pages/LandingPage';
 import About from '../pages/About';
 import Contact from '../pages/Contact';
 import Page404 from '../pages/Page404';
+import Page401 from '../pages/Page401';
 import UserAccount from 'src/pages/UserAccount';
 // ----------------------------------------------------------------------
 
@@ -34,6 +35,7 @@ export default function Router() {
   const LoadableNotFound = Loadable(lazy(() => import('../pages/Page404')));
   const LoadableLandingPage = Loadable(lazy(() => import('../pages/LandingPage')));
   const LoadableRequestPage = Loadable(lazy(() => import('../pages/Request')));
+  const LoadablePage401 = Loadable(lazy(() => import('../pages/Page401')));
 
 
 
